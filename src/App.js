@@ -7,13 +7,13 @@ export default function App() {
   const [todoTitle, setTitle] = useState("");
 
   useEffect(() => {
-    const startArr = localStorage.getItem("todos") || [];
+    const startArr = localStorage.getItem("tds");
     if (startArr) {
       setTodos(JSON.parse(startArr));
     }
   }, []);
   useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem("tds", JSON.stringify(todos));
   }, [todos]);
 
   const addTodo = (event) => {
